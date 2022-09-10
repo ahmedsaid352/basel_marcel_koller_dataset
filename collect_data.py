@@ -9,8 +9,8 @@ soup = BeautifulSoup(html, 'html.parser')
 result=[]
 tactic =[]
 
-result_ele = soup.select('#yw1 > table > tbody > tr > td:nth-child(10)')
-tactic_ele = soup.select('#yw1 > table > tbody > tr > td.zentriert.hauptlink')
+tactic_ele = soup.select('#yw1 > table > tbody > tr > td:nth-child(10)')
+result_ele = soup.select('#yw1 > table > tbody > tr > td.zentriert.hauptlink')
 
 for i in range(len(result_ele)):
     result.append(result_ele[i].text)
@@ -21,4 +21,4 @@ information = {
     'tactic':tactic,
 }
 df = pd.DataFrame(information)
-df.to_excel('datasetinfo.xlsx',index=False)
+df.to_excel('data.xlsx',index=False)
